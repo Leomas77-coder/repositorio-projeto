@@ -1,0 +1,388 @@
+/* Margem geral*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Estilo do corpo da pagina */
+body {
+    font-family: Arial, sans-serif;
+    color: #000000;
+    background-color: #f0e6e600;
+}
+    /* Barra de Pesquisa */
+.barra_pesquisa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*position: fixed;*/
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* Campo de texto/Pesquisa */
+.search-bar {
+    width: 300px;
+    padding: 10px; 
+    border: 4px solid rgb(216, 215, 230);
+    border-radius: 25px 0 0 25px;
+    outline: none;
+}
+/* Botão Pesquisa */
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: white;
+    color: white;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+}
+.search-button:hover {
+    background-color: #c8cacb;
+}
+.suggestions-list {
+    position: absolute;
+    list-style: none;
+    margin-top: 50px;
+    padding: 0;
+    background-color: rgb(251, 249, 249);
+    border: 3px solid #0e0d0d;
+    max-height: 150x;
+    overflow-y: auto;
+    width: 60%;
+    display: none; /* Inicialmente oculta */
+    z-index: 100;
+}
+
+.suggestion-item a {
+    display: block;
+    padding: 8px;
+    color: #333;
+    text-decoration: none;
+}
+
+.suggestion-item a:hover {
+    background-color: #f0f0f0;
+}
+/* Organiza o conteudo de forma centralizda*/
+.content {
+    margin-top: 60px; 
+    padding: 20px;
+    text-align: center;
+}
+/* Layout */
+.container {
+    display: grid;
+    grid-template-areas:
+        "logo logo logo"
+        "nav nav nav"
+        "main main aside"
+        "footer footer footer";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 1fr auto;
+    height: 15vh;
+    gap: 10px;
+
+}
+/* Estilo da Logo*/
+.header {
+    grid-area: logo;
+    background-color: #f9f6f6;
+    padding: 20px;
+    text-align: left;
+    margin: 0%;
+}
+/* Barra de Navegação */
+.nav {
+    grid-area: nav;
+    background-color: #1a1a1b;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+/* Estilo links navegação para as pastas */
+.nav a {
+    text-decoration: none;
+    color: #5a5959;
+    padding: 10px;
+}
+.nav a:hover{
+    color: #1178ac;
+}
+/* Conteudo Principal*/
+.main {
+    grid-area: main;
+    background-color: #f5eeee;
+    padding: 20px;
+}
+/* Barra Lateral */
+.aside {
+    grid-area: aside;
+    background-color: #ddd;
+    padding: 20px;
+}
+/* Rodapé */
+.footer {
+    grid-area: footer;
+    background-color: #ccc;
+    text-align: center;
+    padding: 10px;
+}
+/* Estilização do container */
+.carousel-container {
+    width: 100%;
+    max-width: 900px; 
+    margin: 0 auto;
+    position: relative; 
+    overflow: hidden; 
+    border: 2px solid #333;
+    border-radius: 10px;
+}
+
+/* As imagens ficam lado a lado */
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease-in-out; 
+}
+
+/* Imagens do carrossel */
+.carousel-slide img {
+    width: 100%;
+    height: 500px; 
+}
+
+/* Botões de navegação */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* Container dos cards */
+.product-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+    gap: 20px; 
+    padding: 20px;
+}
+
+/* Estilos do Card de Produto */
+.product-card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+    margin: 10px;
+    font-family: Arial, sans-serif;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #eee;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #333;
+}
+
+.product-description {
+    font-size: 0.9rem;
+    color: #686767;
+    margin: 10px;
+    padding: 0 10px;
+}
+
+.product-price {
+    font-size: 1.4rem;
+    color: #27ae60;
+    margin: 15px 0;
+}
+
+.buy-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #2980b9;
+}
+
+/*Localização*/
+.localizacao{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    border-color: #1a1818;
+}
+ boby{
+    border:100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #202020
+ }
+ .mapbox{
+    position: relative;
+    width: 500px;
+    height: 200px;
+    background: #3013d6;
+ }
+ .mapbox iframe{
+    width:100%;
+    height:100%;
+    }
+    /* Contato */
+/* Estilo geral da página de contato */
+/* Container centralizado para o formulário */
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Estilo do formulário ( area de cadastro)*/
+.contact-form {
+    padding: 20px;
+    border-radius: 30px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgb(14, 13, 13);
+    text-align: left;
+}
+.estilo-formulario {
+
+    background-image: url("https://th.bing.com/th/id/R.9dcf3eaded119cce87c62a202e11dd6a?rik=GNt1DWHORplJYA&riu=http%3a%2f%2f4.bp.blogspot.com%2f-RmW7tFSbQ6M%2fU01kR5gtI8I%2fAAAAAAAAnM4%2fYXuKvNovcSc%2fs1600%2fmusic-1.jpg&ehk=sekuhDwu%2fm75eOLTDG0kzvv6gJeKrMUelh6vY108Sr4%3d&risl=&pid=ImgRaw&r=0");
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 210vh;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;}
+/* Título do formulário */
+.contact-form h1 {
+    font-size: 45px;
+    color: #f5f5f5;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+/* Estilo dos rótulos */
+.contact-form label {
+    font-size: 15px;
+    color: #eee7e7f1;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Campos de entrada de texto */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="date"],
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-size: 14px;
+}
+
+/* Botão de envio */
+.contact-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+.header{
+    background-color:#1a181800;
+}
+  .Img-sobre{
+    margin:10%;
+  }
+
+  /*rodape*/
+  .rodape{
+    
+ 
+    margin:0;
+    font-family: arial,sans-serif;
+    background-color: #33333310;
+    color: #0a0a0a;
+    text-align: center;
+    padding: 20px 10px;
+    width:10;
+    height:100px;
+  }
+
+  .social-icons a {
+    color: #1412a3;
+    margin: 0 10px;
+    font-size: 24px;
+    text-decoration: none;
+  }
+
+  .social-icons a:hover {
+    color:#00080c;
+  }
+/* estilo da fonte do nome da loja*/
+  .p 
+   {
+    font-family:Arial, Helvetica, sans-serif;
+
+  }
