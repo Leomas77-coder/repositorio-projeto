@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmação de Cadastro</title>
+</head>
+<body>
+    <h1>Confirmação de Cadastro</h1>
+
+    <p><strong>Nome:</strong> <span id="confirmNome"></span></p>
+    <p><strong>E-mail:</strong> <span id="confirmEmail"></span></p>
+    <p><strong>Idade:</strong> <span id="confirmIdade"></span></p>
+
+    <button onclick="voltarForm()">Voltar ao Formulário</button>
+
+    <script>
+        // Recupera os dados armazenados no LocalStorage
+        const nome = localStorage.getItem("nome");
+        const email = localStorage.getItem("email");
+        const idade = localStorage.getItem("idade");
+
+        // Exibe os dados na página
+        document.getElementById("confirmNome").textContent = nome;
+        document.getElementById("confirmEmail").textContent = email;
+        document.getElementById("confirmIdade").textContent = idade;
+
+        // Função para voltar ao formulário
+        function voltarForm() {
+            window.location.href = "index.html";  // Redireciona para a página do formulário
+        }
+    </script>
+</body>
+</html>

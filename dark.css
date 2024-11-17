@@ -6,7 +6,7 @@
     opacity:0;
     position:relativeb;
   }
-  
+  /* Botão */
   .label {
     background-color: #111;
     border-radius: 50px;
@@ -23,10 +23,8 @@
   
   }
   
-  .dark-mode {
-    margin-left:0;
-  }
-  
+
+
   .label .ball {
     background-color: #f8f5f5;
     border-radius: 50%;

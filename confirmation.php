@@ -1,7 +1,7 @@
 <?php
 session_start(); // Inicia a sessão para acessar os dados
 
-// Verifica se os dados estão armazenados na sessão
+// Verifica se os dados de nome e email estão armazenados na sessão
 if (isset($_SESSION['nome']) && isset($_SESSION['email'])) {
     $nome = $_SESSION['nome'];
     $email = $_SESSION['email'];
@@ -22,6 +22,6 @@ if (isset($_SESSION['nome']) && isset($_SESSION['email'])) {
     <p><strong>Nome:</strong> <?php echo htmlspecialchars($nome); ?></p>
     <p><strong>E-mail:</strong> <?php echo htmlspecialchars($email); ?></p>
     
-    <a href="C ontato.html">Voltar ao formulário</a>
+    <a href="index.php">Voltar ao formulário</a>
 </body>
 </html>
