@@ -9,7 +9,7 @@ if (isset($_SESSION['nome']) && isset($_SESSION['email'])) {
     echo "Nenhum dado encontrado.";
     exit();
 }
-?>
+?> 
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -22,6 +22,6 @@ if (isset($_SESSION['nome']) && isset($_SESSION['email'])) {
     <p><strong>Nome:</strong> <?php echo htmlspecialchars($nome); ?></p>
     <p><strong>E-mail:</strong> <?php echo htmlspecialchars($email); ?></p>
     
-    <a href="C ontato.html">Voltar ao formulário</a>
+    <a href="Contato.html">Voltar ao formulário</a>
 </body>
 </html>

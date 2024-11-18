@@ -1,19 +1,22 @@
 <?php
-session_start(); // Inicia a sessão para armazenar os dados
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Captura os dados do formulário
+    $nome = $_POST["name"] ?? '';
+    $data = $_POST["date"] ?? '';
+    $email = $_POST["email"] ?? '';
+    $mensagem = $_POST["mensagem"] ?? '';
 
-// Verifica se os campos foram preenchidos
-if (isset($_POST['nome']) && isset($_POST['email'])) {
-    $nome = $_POST['nome'];
-    $email = $_POST['email'];
+    // Prepara os dados para salvar
+    $conteudo = "Name: $nome\nData de Aniversário: $data\nE-mail: $email\nMensagem: $mensagem\n\n";
 
-    // Armazena os dados na sessão
-    $_SESSION['nome'] = $nome;
-    $_SESSION['email'] = $email;
+    // Caminho do arquivo local
+    $arquivo = "dados.txt";
 
-    // Redireciona para a página de confirmação
-    header("Location: confirmacao.php");
-    exit();
+    // Salva os dados no arquivo
+    file_put_contents($arquivo, $conteudo, FILE_APPEND);
+
+    echo "Dados salvos com sucesso!";
 } else {
-    echo "Por favor, preencha todos os campos.";
+    echo "Método de envio inválido.";
 }
 ?>
